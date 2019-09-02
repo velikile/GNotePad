@@ -1,0 +1,1 @@
+call "c:\Program Files\Microsoft Visual Studio 10.0\VC\vcvarsall"
