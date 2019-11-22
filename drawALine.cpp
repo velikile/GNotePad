@@ -2,7 +2,7 @@
 #include <windowsx.h>
 #include <objidl.h>
 #include <gdiplus.h>
-//#include <stdio.h>
+#include <stdio.h>
 #include <GL/gl.h>
 #define STB_TRUETYPE_IMPLEMENTATION
 #include "stb_truetype.h"
@@ -100,26 +100,26 @@ struct saveData
 	line *lines;	
 };
 
-void Save(char * path)
-{
-	file_ptr file = OpenFile(path);
-	WriteInt(file,pathsCount);
-	WriteInt(file,currentLineCount);
-	WriteBuffer(file,paths,pathsCount*sizeof(path_data));
-	WriteBuffer(file,paths,currentLineCount*sizeof(line));
-	CloseFile(file);
-}
-
-void Load(char * path)
-{
-	saveData sd;
-	file_ptr file = OpenFile(path);
-	sd.pathsCount = ReadInt(file);
-	sd.lineCount = ReadInt(file);
-	ReadCount(file,sd.pathsCount*sizeof(path_data),paths);
-	ReadCount(file,sd.linesCount*sizeof(linesCount),lines);		
-	CloseFile(file);
-}
+//void Save(char * path)
+//{
+//	file_ptr file = OpenFile(path);
+//	WriteInt(file,pathsCount);
+//	WriteInt(file,currentLineCount);
+//	WriteBuffer(file,paths,pathsCount*sizeof(path_data));
+//	WriteBuffer(file,paths,currentLineCount*sizeof(line));
+//	CloseFile(file);
+//}
+//
+//void Load(char * path)
+//{
+//	saveData sd;
+//	file_ptr file = OpenFile(path);
+//	sd.pathsCount = ReadInt(file);
+//	sd.lineCount = ReadInt(file);
+//	ReadCount(file,sd.pathsCount*sizeof(path_data),paths);
+//	ReadCount(file,sd.linesCount*sizeof(linesCount),lines);		
+//	CloseFile(file);
+//}
 
 void InitPaths()
 {
